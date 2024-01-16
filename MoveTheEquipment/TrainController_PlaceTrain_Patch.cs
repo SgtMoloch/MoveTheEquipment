@@ -5,9 +5,11 @@ using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Track;
+using UI.Builder;
 
 namespace MoveTheEquipment
 {
@@ -22,8 +24,10 @@ namespace MoveTheEquipment
 
             string rrReportingMark = gameStorage.RailroadMark;
             bool buyingCompanyEquipment = false;
-           
-            foreach(CarDescriptor car in descriptors)
+
+            MethodInfo carsOnSpan = typeof(TrainController).GetMethod("CarsOnSpan", BindingFlags.NonPublic | BindingFlags.Instance);
+
+            foreach (CarDescriptor car in descriptors)
             {
                 if(car.Ident.ReportingMark.Equals(rrReportingMark))
                 {
@@ -42,7 +46,7 @@ namespace MoveTheEquipment
                 // check for non company cars on spans
                 foreach(TrackSpan span in spans)
                 {
-                    List<Car> list = __instance.CarsOnSpan(span).ToList();
+                    List<Car> list = ((IEnumerable <Car>)carsOnSpan.Invoke(__instance, new object[] { span })).ToList();
 
                     List<CarDescriptor> equipmentDescriptors = new List<CarDescriptor>();
                     List<string> equipmentCarIds = new List<string>();
