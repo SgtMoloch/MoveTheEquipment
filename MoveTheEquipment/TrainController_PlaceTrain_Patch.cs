@@ -58,7 +58,7 @@ namespace MoveTheEquipment
 
                     if (!location.HasValue)
                     {
-                        logger.Information("Track span {0} {1} does not have a lower location to move cars to. Will not move equipment on this track span", span.name, trackNum);
+                        logger.Information("{0} Track {1} does not have a lower location to move cars to. Equipment on this track will not be moved.", span.name, trackNum);
                         continue;
                     }
 
@@ -70,7 +70,7 @@ namespace MoveTheEquipment
 
                         if(!carReportingMark.Equals(rrReportingMark))
                         {
-                            logger.Information("There are non company cars mixed in with the company cars on {0} Track {1}", span.name, trackNum);
+                            logger.Information("There are non company cars mixed in with the company cars on {0} Track {1}. Equipment on this track will not be moved.", span.name, trackNum);
                             equipmentDescriptors.Clear();
                             equipmentCarIds.Clear();
                             equipmentNames.Clear();
@@ -79,16 +79,16 @@ namespace MoveTheEquipment
                             break;
                         }
 
-                        //if(car.Descriptor().Ident.RoadNumber.EndsWith("T"))
-                        //{
-                        //    logger.Information("Car on track is a tender. Moving of steam engines is not currently supported. Will not move equipment.");
-                        //    equipmentDescriptors.Clear();
-                        //    equipmentCarIds.Clear();
-                        //    equipmentNames.Clear();
+                        if(car.Descriptor().Ident.RoadNumber.EndsWith("T"))
+                        {
+                            logger.Information("There is a Steam Engine on {0} Track {1}. Moving of steam engines is not currently supported. Equipment on this track will not be moved.", span.name, trackNum);
+                            equipmentDescriptors.Clear();
+                            equipmentCarIds.Clear();
+                            equipmentNames.Clear();
 
-                        //    moveCars = false; 
-                        //    break;
-                        //}
+                            moveCars = false; 
+                            break;
+                        }
 
                         equipmentDescriptors.Add(car.Descriptor());
                         equipmentCarIds.Add(car.id);
@@ -97,7 +97,7 @@ namespace MoveTheEquipment
 
                     if(moveCars)
                     {
-                        logger.Information("Moving the following euipment on span {0} {1}: {2}", span.name, trackNum, equipmentNames);
+                        logger.Information("Moving the following euipment on {0} Track {1}: {2}", span.name, trackNum, equipmentNames);
                         MoveEquipment(__instance, moveToLocation, equipmentDescriptors, equipmentCarIds);
                     }
 
