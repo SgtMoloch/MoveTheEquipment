@@ -8,10 +8,9 @@ Follow the instalation steps in the above Link.
 
 
 ## Usage
-1. Download MoveTheEquipment.zip from the Releases Page.
-2. Ensure you have a Mods folder in your Railroader install directory. If you do no have this, you need to follow the instalation steps for Railloader.
-3. Extract the zip folder into your Railroader install directory, this should place a folder: MoveTheEquipment into the Mods folder.
-5. Run the game and enjoy no longer having company cars interfere with interchange deliveries.
+1. Download the MoveTheEquipment zip from the Releases Page.
+2. Extract the zip folder into your Railroader install directory, this should place a folder: MoveTheEquipment into the Mods folder.
+3. Run the game and enjoy no longer having company cars interfere with interchange deliveries.
 
 ## Notes
 1. This mod currently supports Railroader verison 2024.1.0a. This mod may break in future updates. I will do my best to continue to update this mod.
