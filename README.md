@@ -11,10 +11,10 @@ Follow the instalation steps in the above Link.
 1. Download MoveTheEquipment.zip from the Releases Page.
 2. Ensure you have a Mods folder in your Railroader install directory. If you do no have this, you need to follow the instalation steps for Railloader.
 3. Extract the zip folder into your Railroader install directory, this should place a folder: MoveTheEquipment into the Mods folder.
-4. Run the game and enjoy no longer having company cars interfere with interchange deliveries.
+5. Run the game and enjoy no longer having company cars interfere with interchange deliveries.
 
 ## Notes
-1. This mod currently supports Railroader verison 2023.3.2a. This mod may break in future updates. I will do my best to continue to update this mod.
+1. This mod currently supports Railroader verison 2024.1.0a. This mod may break in future updates. I will do my best to continue to update this mod.
 2. It is possible that the developers of Railroader will implement their own fix for this issue. At such time this mod will be deprecated and no longer maintained.
 3. As the saying goes, use mods at your own risk.
 
@@ -30,4 +30,4 @@ Currently, this mod does not support moving steam engines in the fashion describ
 Yes, only if the Host has the mod. Initial tests indicate that other players do not need the mod, even if they increment time to service the interchange. If the host does not have the mod, then it will not work.
 
 ### What version of Railroader does this mod work with?
-2023.3.2a
+2024.1.0a
