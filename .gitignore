@@ -1,6 +1,4 @@
 .vs
 obj
 Paths.user
-bin/MoveTheEquipment_v1.0.0.zip
-MoveTheEquipment/bin/Release/Mods/MoveTheEquipment/Definition.json
-MoveTheEquipment/bin/Release/Mods/MoveTheEquipment/MoveTheEquipment.dll
+bin

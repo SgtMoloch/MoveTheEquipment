@@ -66,11 +66,9 @@ namespace MoveTheEquipment
 
                     foreach (Car car in list)
                     {
-                        string carReportingMark = car.Descriptor().Ident.ReportingMark;
-
-                        if(!carReportingMark.Equals(rrReportingMark))
+                        if(!car.IsOwnedByPlayer)
                         {
-                            logger.Information("There are non company cars mixed in with the company cars on {0} Track {1}. Equipment on this track will not be moved.", span.name, trackNum);
+                            logger.Information("The non company car {0} is on {1} Track {2}. Equipment on this track will not be moved.", car.name, span.name, trackNum);
                             equipmentDescriptors.Clear();
                             equipmentCarIds.Clear();
                             equipmentNames.Clear();
